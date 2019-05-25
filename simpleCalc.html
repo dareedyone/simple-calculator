@@ -1,0 +1,100 @@
+<!D0CTYPE html>
+<html>
+    <head>
+    <title>Simple calculator</title>
+    </head>
+    <body>
+    <table>
+        <tr>
+        <th colspan="5"> <input type="text" disabled id="display" ></th>
+            <tr></tr>
+        
+        <tr>
+        <td><button onclick="number(9)">9</button></td>
+        <td><button onclick="number(8)">8</button></td>
+        <td><button onclick="number(7)">7</button></td>
+           
+        <td rowspan="2"><button onclick="operatorz('add')">+</button></td>
+        <td rowspan="2"><button onclick="operatorz('sub')">-</button></td>
+        </tr>
+        
+         <tr>
+        <td><button onclick="number(6)">6</button></td>
+        <td><button onclick="number(5)">5</button></td>
+        <td><button onclick="number(4)">4</button></td>
+             
+        </tr>
+        
+         <tr>
+        <td><button onclick="number(3)">3</button></td>
+        <td><button onclick="number(2)">2</button></td>
+        <td><button onclick="number(1)">1</button></td>
+        
+             <td colspan="2"><button onclick="equals()">=</button></td>
+        </tr>
+        
+        
+        </table>
+    
+    <script>
+        var display = document.getElementById('display'); 
+        var start = 0;
+        var present = 0;
+        var operator = "";
+        var answers ;
+        
+        
+       function number(n) {
+           
+           display.value += n;
+           
+                
+        
+            
+            }
+        
+        function operatorz (n) {
+            start = parseInt(display.value);
+            if (n === 'add') {
+              
+            display.value = "";
+                operator = "add";
+            } else if (n === "sub") {
+                
+                display.value = "";
+                operator = "sub";
+            }
+        }
+       
+        
+        function equals () {
+            present = display.value;
+            if (operator === "add") {
+               var  answer = parseInt(start) + parseInt(present);
+                display.value = answer;
+                operator = "";
+            }else if(operator === "sub") {
+                var answer = parseInt(start) - parseInt(present);
+                display.value = answer;
+                operator = "";
+            }
+        }
+        
+       
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </script>
+    
+    
+    </body>
+
+</html>
