@@ -37,6 +37,7 @@
         </table>
     
     <script>
+        var anything = true;
         var display = document.getElementById('display'); 
         var start = 0;
         var present = 0;
@@ -45,8 +46,13 @@
         
         
        function number(n) {
+        if (!anything) {
+            display.value = n;
+        } else {
+             display.value += n;
+        }
            
-           display.value += n;
+          
            
                 
         
@@ -78,6 +84,7 @@
                 display.value = answer;
                 operator = "";
             }
+            anything = false;
         }
         
        
